@@ -3,6 +3,7 @@
 
 prefix = /usr/local
 bindir = $(prefix)/bin
+VERSION = $(shell git show -q --format=%h)
 
 PROG = microsocks
 SRCS =  sockssrv.c server.c sblist.c sblist_delete.c
@@ -24,11 +25,14 @@ clean:
 	rm -f $(PROG)
 	rm -f $(OBJS)
 
+build:
+	docker build -t $(PROG):$(VERSION) .
+
 %.o: %.c
 	$(CC) $(CPPFLAGS) $(CFLAGS) $(INC) $(PIC) -c -o $@ $<
 
 $(PROG): $(OBJS)
 	$(CC) $(LDFLAGS) $(OBJS) $(LIBS) -o $@
 
-.PHONY: all clean install
+.PHONY: all clean install build
 
