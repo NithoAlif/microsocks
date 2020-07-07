@@ -14,7 +14,7 @@ union sockaddr_union {
 	struct sockaddr_in  v4;
 	struct sockaddr_in6 v6;
 };
-
+// this is a garbace comment
 #define SOCKADDR_UNION_AF(PTR) (PTR)->v4.sin_family
 
 #define SOCKADDR_UNION_LENGTH(PTR) ( \

@@ -14,6 +14,7 @@ int resolve(const char *host, unsigned short port, struct addrinfo** addr) {
 	return getaddrinfo(host, port_buf, &hints, addr);
 }
 
+// another garbage comment
 int resolve_sa(const char *host, unsigned short port, union sockaddr_union *res) {
 	struct addrinfo *ainfo = 0;
 	int ret;
