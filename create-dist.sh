@@ -8,7 +8,7 @@ me=`pwd`
 proj=microsocks
 projver=${proj}-${VER}
 
-// another changes
+// another changes v2
 
 tempdir=/tmp/${proj}-0000
 rm -rf "$tempdir"
